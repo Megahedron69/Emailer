@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,10 +28,65 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>Internal Email Service</title>
+        <meta
+          name="description"
+          content="Internal Email service to send emails"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Internal Email Service" />
+        <meta
+          property="og:description"
+          content="Internal Email service to send emails"
+        />
+        <meta
+          property="og:url"
+          content="https://imgsrc.io/guides/open-graph-meta-tags"
+        />
+        <meta property="og:image" content="https://i.imgur.com/wM1V0oV.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Internal Email Service" />
+        <meta
+          name="twitter:description"
+          content="Internal Email service to send emails"
+        />
+        <meta name="twitter:image" content="https://i.imgur.com/wM1V0oV.png" />
+        <meta name="twitter:image:width" content="1200" />
+        <meta name="twitter:image:height" content="630" />
+
+        <meta name="author" content="Kartic Joshi" />
+        <meta name="robots" content="noindex, nofollow" />
+        <link
+          rel="canonical"
+          href="https://imgsrc.io/guides/open-graph-meta-tags"
+        />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
+
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
+
+        <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192" />
+        <link rel="icon" href="/icons/icon-512x512.png" sizes="512x512" />
+
+        <link rel="manifest" href="/manifest.json" />
+
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <ToastContainer />
       </body>
     </html>
   );
